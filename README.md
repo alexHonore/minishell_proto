@@ -1,9 +1,6 @@
 
 # Minishell
 
-
-
-
 ## Features
 
 - builtins (cd, pwd, echo, export, unset, env, exit)
@@ -45,3 +42,30 @@ prototype
 | var1      | var              | **Required**. Your API key |
 | var2      | var              | **Required**. Your API key |
 | var3      | var              | **Required**. Your API key |
+
+## Usage/Examples
+
+```exemple of commands
+
+cd ..
+echo "allo"
+ls | wc -l
+echo world >> text.txt
+cat text.txt
+cat << EOF
+echo $[VAR_NAME]
+echo $?
+./minishell
+exit 31
+unset $[VAR_NAME]
+export $[VAR_NAME]
+
+```
+
+## S/O
+
+Documentation that helped me learning this project :)
+
+[Link1](https://github.com/alexHonore)
+[Link2](https://github.com/alexHonore)
+

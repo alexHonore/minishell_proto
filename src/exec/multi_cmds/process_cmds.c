@@ -6,7 +6,7 @@
 /*   By: anshimiy <anshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 16:35:48 by anshimiy          #+#    #+#             */
-/*   Updated: 2023/05/16 14:00:28 by anshimiy         ###   ########.fr       */
+/*   Updated: 2023/05/26 13:26:05 by anshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,6 @@ void	ft_run_execve(t_state *state)
 
 void	ft_run_one_child(t_state *state, int *fd)
 {
-	int	error;
-
-	error = 1;
 	if (state->index < state->nb_cmds - 1)
 	{
 		close(fd[0]);
@@ -39,7 +36,7 @@ void	ft_run_one_child(t_state *state, int *fd)
 	if (ft_run_builtin(state) == 0)
 		ft_run_execve(state);
 	ft_close_fd();
-	exit(error);
+	exit(1);
 }
 
 void	ft_run_childs(t_state *state)
@@ -79,9 +76,7 @@ void	ft_process_commands(t_state *state)
 	state->index = 0;
 	state->pid = ft_calloc(sizeof(pid_t), state->nb_cmds);
 	if (!state->pid)
-	{
 		ft_minishell_err(state, M_PIPE_ERR, N_PIPE_ERR);
-	}
 	ft_run_childs(state);
 	ft_wait_childs(state);
 	ft_free(state->pid);
