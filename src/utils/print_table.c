@@ -6,12 +6,16 @@
 /*   By: anshimiy <anshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 16:24:00 by anshimiy          #+#    #+#             */
-/*   Updated: 2023/05/16 15:02:55 by anshimiy         ###   ########.fr       */
+/*   Updated: 2023/05/31 15:12:12 by anshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minishell.h"
 
+/// @brief Print a str array
+/// @param str -> the value to print
+/// @param new_line -> if 0, print without nl(\n), if 1, 
+///	print a nl(\n) between each values, if 2, a nl(\n) at the end only
 void	ft_print_table(char **str, int new_line)
 {
 	int	i;
@@ -23,7 +27,7 @@ void	ft_print_table(char **str, int new_line)
 	size = ft_arr_size(str);
 	while (str[i])
 	{
-		if (new_line >= 1)
+		if (new_line == 1)
 			printf("%s\n", str[i]);
 		else
 		{
@@ -36,4 +40,6 @@ void	ft_print_table(char **str, int new_line)
 		}
 		i++;
 	}
+	if (new_line == 2)
+		printf("\n");
 }

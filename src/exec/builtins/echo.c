@@ -6,7 +6,7 @@
 /*   By: anshimiy <anshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 16:23:25 by anshimiy          #+#    #+#             */
-/*   Updated: 2023/05/24 14:33:33 by anshimiy         ###   ########.fr       */
+/*   Updated: 2023/05/31 15:10:14 by anshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_echo(t_state *state)
 	}
 	else if (size >= 2)
 	{
-		ft_print_table(past + 1, 1);
+		ft_print_table(past + 1, 2);
 		return ;
 	}
 }

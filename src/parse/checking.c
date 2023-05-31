@@ -6,7 +6,7 @@
 /*   By: anshimiy <anshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 09:15:39 by anshimiy          #+#    #+#             */
-/*   Updated: 2023/05/16 14:35:32 by anshimiy         ###   ########.fr       */
+/*   Updated: 2023/05/31 09:13:41 by anshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,9 @@ int	ft_unexptd_token_check(t_node *list)
 
 void	ft_check_pipes(t_state *state)
 {
-	int		i;
 	t_node	*aff;
 
 	aff = ft_get_first_node(state->tokens);
-	i = 0;
 	if (aff->content && ft_strncmp(aff->content, "|\0", 2) == 0)
 	{
 		ft_minishell_err(state, M_TOKEN_ERR, N_TOKEN_ERR);
