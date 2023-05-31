@@ -6,7 +6,7 @@
 /*   By: anshimiy <anshimiy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 09:51:56 by anshimiy          #+#    #+#             */
-/*   Updated: 2023/05/16 14:48:37 by anshimiy         ###   ########.fr       */
+/*   Updated: 2023/05/31 16:33:01 by anshimiy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,13 @@ char	*ft_clean_quotes(char *str)
 	return (str);
 }
 
+/// @brief 
+/// @param state 
+/// @param i 
+/// @param table 
+/// @todo: On line: if (ft_strcmp(table[0], "echo") != 0),
+///		we should check instead if the table[j] before is quotted,
+///		if so, we sould not clean the space using ft_clean_space_str.
 void	ft_add_commands_clean(t_state *state, int i, char **table)
 {
 	int		modife;
@@ -46,14 +53,15 @@ void	ft_add_commands_clean(t_state *state, int i, char **table)
 	while (table && table[j])
 	{
 		if (table[j][0] == '\'')
-		{
 			modife = 0;
-		}
 		table[j] = ft_clean_quotes(table[j]);
-		path = ft_clean_space_str(table[j]);
-		ft_free(table[j]);
-		table[j] = NULL;
-		table[j] = path;
+		if (ft_strcmp(table[0], "echo") != 0)
+		{
+			path = ft_clean_space_str(table[j]);
+			ft_free(table[j]);
+			table[j] = NULL;
+			table[j] = path;
+		}
 		if (modife == 1)
 			ft_handle_env_varibles(state, i, j);
 		j++;
