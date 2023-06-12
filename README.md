@@ -66,6 +66,9 @@ export $[VAR_NAME]
 
 Documentation that helped me learning this project :)
 
-[Link1](https://github.com/alexHonore)
-[Link2](https://github.com/alexHonore)
+[My guy CodeVault](https://youtube.com/playlist?list=PLfqABt5AS4FkW5mOn2Tn9ZZLLDwA3kZUY)
+
+[GNU bash documentation](https://www.gnu.org/software/bash/manual/bash.html)
+
+[42Docs](https://harm-smits.github.io/42docs/projects/minishell)
 
