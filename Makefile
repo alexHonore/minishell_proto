@@ -6,13 +6,13 @@
 #    By: anshimiy <anshimiy@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/07 20:37:11 by anshimiy          #+#    #+#              #
-#    Updated: 2023/05/24 13:51:29 by anshimiy         ###   ########.fr        #
+#    Updated: 2023/06/12 11:23:37 by anshimiy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # VARS
 PROJECT	:=	minishell
-CC		:=	gcc -g -Wall -Werror -Wextra #-lreadline
+CC		:=	gcc -g -Wall -Werror -Wextra #-lreadline, gdb debug enabled
 RM		:=	rm -f
 READLINE = ./includes/readline/libreadline.a ./includes/readline/libhistory.a -lreadline -lcurses
 MY_LIB	:=	./includes/my_lib
